@@ -1,0 +1,10 @@
+<p>completed works!</p>
+
+<h2>Here is a random Magic the Gathering card since you completed these tasks:</h2>
+<ul *ngIf="randomMagicCard">
+    <li>{{ randomMagicCard.name }}</li>
+    <li>{{ randomMagicCard.cmc }}</li>
+    <li>{{ randomMagicCard.type_line }}</li>
+    <li>{{ randomMagicCard.oracle_text }}</li>
+    <li *ngIf="randomMagicCard.power">{{ randomMagicCard.power }}/{{ randomMagicCard.toughness }}</li>
+</ul>

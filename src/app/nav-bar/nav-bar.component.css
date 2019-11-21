@@ -1,0 +1,44 @@
+header {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar {
+    background: #95e2f6;
+    padding: 0.9em 0;
+}
+
+.nav-bar a {
+    color: black;
+    text-decoration: none;
+
+}
+
+.logo {
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+nav {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+}
+
+li a{
+    height: max-content;
+    padding: 1em;
+    background: #66D6F2;
+
+}
+
+.nav-link {
+}
+
+.nav-link:hover {
+    filter: brightness(85%);
+}
