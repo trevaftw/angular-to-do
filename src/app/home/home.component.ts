@@ -10,17 +10,35 @@ import { HttpService } from '../http.service'
 export class HomeComponent implements OnInit {
 
   clickCount: number = 0;
-  tasks: object;
+  tasks: object[];
   name: string = '';
 
   constructor(private _http: HttpService) { }
 
   ngOnInit() {
     this._http.myMethod();
+    this.tasks = [
+      {
+        id: 1,
+        title: 'Finish adding tasks',
+        completed: false,
+      },
+      {
+        id: 2,
+        title: 'Learn more advanced Angular',
+        completed: false,
+      },
+      {
+        id: 3,
+        title: 'Have fun',
+        completed: false,
+      }
+    ]
   }
 
   countClick() {
     this.clickCount++
+    
   }
 
   setClass() {

@@ -6,8 +6,10 @@
     <br>
 </div>
 <div class="container">
-    <p>You need to do:</p><br />
-    {{ name }}
+    <p>You need to do:</p>
+    <ul *ngFor="let task of tasks">
+        <li><input type="checkbox" /> {{task.title}}</li>
+    </ul>
 </div>
 <div class="container" [ngClass]="setClass()">
     <p>Want a distraction? How many times can you click <span class="this-button" (click)="countClick()">THIS</span>?
