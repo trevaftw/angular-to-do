@@ -2,17 +2,19 @@
 
 <div class="container">
     Task description: <br />
-    <input type="text" [(ngModel)]="name" />
+    <input type="text" [(ngModel)]="taskTitle" (keyup.enter)="addTask()"/>
     <br>
 </div>
+
 <div class="container">
     <p>You need to do:</p>
     <ul *ngFor="let task of tasks">
-        <li><input type="checkbox" /> {{task.title}}</li>
+        <li><input type="checkbox" /> {{task.title}}. <strong>Delete: </strong> <span class="remove-item" (click)="deleteTask()" >&times;</span> </li>
     </ul>
 </div>
+
 <div class="container" [ngClass]="setClass()">
-    <p>Want a distraction? How many times can you click <span class="this-button" (click)="countClick()">THIS</span>?
+    <p>Want a distraction? How many times can you click <span class="this-button" (click)="countClick(task.id)">THIS</span>?
     </p>
     <ng-template [ngIf]="clickCount === 0" [ngIfElse]="nonZero">
         <p>Zero Click</p>

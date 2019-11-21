@@ -43,6 +43,12 @@
 
 ul {
     list-style-type: none;
-
 }
 
+.remove-item {
+    cursor: pointer;
+}
+
+strong {
+    margin-left: 14px;
+}

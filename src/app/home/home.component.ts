@@ -9,36 +9,42 @@ import { HttpService } from '../http.service'
 })
 export class HomeComponent implements OnInit {
 
-  clickCount: number = 0;
+  clickCount: number;
   tasks: object[];
-  name: string = '';
+  taskTitle: string;
+  taskID: number;
 
   constructor(private _http: HttpService) { }
 
   ngOnInit() {
     this._http.myMethod();
+    this.clickCount = 0;
+    this.taskTitle = '';
+    this.taskID = 4;
     this.tasks = [
       {
         id: 1,
         title: 'Finish adding tasks',
         completed: false,
+        editing: false,
       },
       {
         id: 2,
         title: 'Learn more advanced Angular',
         completed: false,
+        editing: false,
       },
       {
         id: 3,
         title: 'Have fun',
         completed: false,
+        editing: false,
       }
     ]
   }
 
   countClick() {
     this.clickCount++
-    
   }
 
   setClass() {
@@ -53,7 +59,26 @@ export class HomeComponent implements OnInit {
     return myClass;
   }
 
+  //void because this is not returning anything
+  addTask(): void {
+    //make sure not an empty string. trim removes empty space at the end then check the length to see if it's empty
+    if (this.taskTitle.trim().length === 0) {
+      return alert('No empty tasks');
+    }
+    this.tasks.push({
+      id: this.taskID,
+      title: this.taskTitle,
+      completed: false,
+      editing: false,
+    })
+    //after pushing to taskList, empty the input and increment the ID
+    this.taskTitle = '';
+    this.taskID++;
+  }
 
-
+  deleteTask(id: number): void {
+    // this.tasks = this.tasks.filter(task => task.id !== id)
+    console.log('id:', id)
+  }
 
 }
