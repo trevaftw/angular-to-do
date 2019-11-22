@@ -5,7 +5,7 @@
 }
 
 .container {
-    margin: 10%;
+    margin: 5% 10%;
     padding: 1em;
     border-style: solid;
     border-color: #F6A895; 
@@ -33,4 +33,13 @@ hr {
     border-radius: 0 0 15px 15px;
     box-shadow: 5px 10px 5px -5px #c5c5c5;
 
+}
+
+.checked {
+    font-style: italic;
+}
+
+.completed {
+    text-decoration: line-through;
+    font-style: italic;
 }

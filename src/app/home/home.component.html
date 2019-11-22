@@ -7,9 +7,14 @@
 </div>
 
 <div class="container">
-    <p>You need to do:</p>
+    <ng-template [ngIf]="tasks.length > 0" [ngIfElse]="noTasks">
+        <p>You have {{ taskCount() }} tasks left to do:</p>
+    </ng-template>
+    <ng-template #noTasks>
+        <p>You finished all your tasks!</p>
+    </ng-template>
     <ul *ngFor="let task of tasks">
-        <li><input type="checkbox" />
+        <li [ngClass]="{ 'checked' : task.marked }"><input type="checkbox" [(ngModel)]="task.completed" />
             <ng-template [ngIf]="task.editing === false" [ngIfElse]="editingTask">
                 {{task.title}}. <button class="edit-item" (click)="editTask(task)">Edit</button>
             </ng-template>
@@ -22,7 +27,7 @@
     </ul>
     <hr noshade="noshade">
     <div class="selected-div">
-        <button>Select All</button>
+        <input type="checkbox" (click)="selectAll()" />Select All<br/>
         <button>Complete Selected</button>
         <button>Delete Selected</button>
     </div>

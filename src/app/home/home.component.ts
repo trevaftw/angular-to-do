@@ -12,7 +12,7 @@ import { Task } from '../interface/task'
 })
 export class HomeComponent implements OnInit {
 
-  
+
   // tasks: object[]; see comment in deleteTask()
   tasks: Task[];
   taskTitle: string;
@@ -75,6 +75,18 @@ export class HomeComponent implements OnInit {
     //to use it across our app, we can $ ng g interface file-name
     this.tasks = this.tasks.filter(task => task.id !== id)
     console.log('id:', id)
+  }
+
+  taskCount(): number {
+    return this.tasks.filter(task => !task.completed).length;
+    //take the array of tasks, and filter out the tasks that ARE completed (which means we get hot many need to be done still)
+    //then we take the length to give us how many tasks there are 
+  }
+
+  selectAll(): void {
+    // console.log('selectAll hit')
+    //for each task, set the task completed to match whater the select all check box is (checked or not)
+    this.tasks.forEach(task => task.completed = (<HTMLInputElement>event.target).checked)
   }
 
 }

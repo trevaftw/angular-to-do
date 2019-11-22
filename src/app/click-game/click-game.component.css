@@ -1,11 +1,10 @@
 .container {
-    margin: 10%;
     padding: 1em;
     border-style: solid;
     border-color: #F6A895; 
     border-radius: 25px;
     box-shadow: 5px 10px 5px -5px #888888;
-
+    margin: 5% 10%;
 }
 
 .this-button {
