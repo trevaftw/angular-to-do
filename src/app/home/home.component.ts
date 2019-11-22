@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
   }
 
   deleteTask(id: number): void {
-    // this.tasks = this.tasks.filter(task => task.id !== id)
+    this.tasks = this.tasks.filter(task => task.id !== id)
     console.log('id:', id)
   }
 
