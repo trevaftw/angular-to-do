@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpService } from '../http.service'
 
+//interfaces
+import { Task } from '../interface/task'
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,7 +13,8 @@ import { HttpService } from '../http.service'
 export class HomeComponent implements OnInit {
 
   clickCount: number;
-  tasks: object[];
+  // tasks: object[]; see comment in deleteTask()
+  tasks: Task[];
   taskTitle: string;
   taskID: number;
 
@@ -76,9 +80,24 @@ export class HomeComponent implements OnInit {
     this.taskID++;
   }
 
+  editTask(task: object): void {
+    console.log(task)
+  }
+
   deleteTask(id: number): void {
+    //because 'tasks' is an object[], we get a red squiggly under task.id
+    // we can fix this by changing it to an interface we define ourselves. 
+    //we can either do this in this file (see commented section at the end) but then we can't use it across our app
+    //to use it across our app, we can $ ng g interface file-name
     this.tasks = this.tasks.filter(task => task.id !== id)
     console.log('id:', id)
   }
 
 }
+
+// interface Task {
+//   id: number,
+//   title: string,
+//   completed: boolean,
+//   editing: boolean,
+// }
