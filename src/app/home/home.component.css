@@ -1,15 +1,4 @@
-.this-button {
-    font-weight: bold;
-    background: #F6A895;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    padding: 0.5em;
-}
 
-.this-button:hover {
-    filter: brightness(85%);
-}
 
 .page-title {
     padding-left: 10%;
@@ -24,31 +13,7 @@
 
 }
 
-/* changes the color for the click div based on the class, based on the number of clicks */
-.five {
-    background: #7189bf;
-}
-.ten {
-    background: #df7599;
-}
-.twentyFive {
-    background: #ffc785;
-}
-.fifty {
-    background: #72d6c9;
-}
-.hundred {
-    background: #a374d5;
-}
 
 ul {
     list-style-type: none;
-}
-
-.remove-item {
-    cursor: pointer;
-}
-
-strong {
-    margin-left: 14px;
 }

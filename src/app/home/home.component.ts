@@ -12,7 +12,7 @@ import { Task } from '../interface/task'
 })
 export class HomeComponent implements OnInit {
 
-  clickCount: number;
+  
   // tasks: object[]; see comment in deleteTask()
   tasks: Task[];
   taskTitle: string;
@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this._http.myMethod();
-    this.clickCount = 0;
     this.taskTitle = '';
     this.taskID = 4;
     this.tasks = [
@@ -47,22 +46,6 @@ export class HomeComponent implements OnInit {
     ]
   }
 
-  countClick() {
-    this.clickCount++
-  }
-
-  setClass() {
-    let myClass = {
-      notActive: this.clickCount < 5,
-      five: this.clickCount > 4 && this.clickCount < 10,
-      ten: this.clickCount > 9 && this.clickCount < 25,
-      twentyFive: this.clickCount > 24 && this.clickCount < 50,
-      fifty: this.clickCount > 49 && this.clickCount < 100,
-      hundred: this.clickCount > 99,
-    }
-    return myClass;
-  }
-
   //void because this is not returning anything
   addTask(): void {
     //make sure not an empty string. trim removes empty space at the end then check the length to see if it's empty
@@ -81,7 +64,7 @@ export class HomeComponent implements OnInit {
   }
 
   editTask(task: Task): void {
-    console.log(task)
+    // console.log(task)
     task.editing = !task.editing
   }
 

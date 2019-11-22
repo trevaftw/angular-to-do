@@ -12,6 +12,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CompletedComponent } from './completed/completed.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { ClickGameComponent } from './click-game/click-game.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
     NavBarComponent,
     CompletedComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    ClickGameComponent
   ],
   imports: [
     BrowserModule,

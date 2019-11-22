@@ -10,29 +10,14 @@
     <p>You need to do:</p>
     <ul *ngFor="let task of tasks">
         <li><input type="checkbox" /> 
-            <ng-template [ngIf]="task.editing === false" [ngIfElse]="save">
+            <ng-template [ngIf]="task.editing === false" [ngIfElse]="editingTask">
                 {{task.title}}. <button class="edit-item" (click)="editTask(task)" >Edit</button>
             </ng-template>
-            <ng-template #save>
+            <ng-template #editingTask>
                 <input type="text" [(ngModel)]="task.title" /><button class="edit-item" (click)="editTask(task)">Save</button>
             </ng-template>
             <button class="remove-item" (click)="deleteTask(task.id)">Delete</button> </li><br />
     </ul>
 </div>
 
-<div class="container" [ngClass]="setClass()">
-    <p>Want a distraction? How many times can you click <span class="this-button"
-            (click)="countClick()">THIS</span>?
-    </p>
-    <ng-template [ngIf]="clickCount === 0" [ngIfElse]="nonZero">
-        <p>Zero Click</p>
-    </ng-template>
-    <ng-template #nonZero>
-        <p> {{ clickCount }} clicks
-            <ng-template [ngIf]="clickCount >= 50 && clickCount<100"> is a lot of clicks. <br />
-                How many more you got in you?</ng-template>
-            <ng-template [ngIf]="clickCount >=100"><br /> 100 is more than enough</ng-template>
-        </p>
-    </ng-template>
-
-</div>
+<click-game></click-game>
