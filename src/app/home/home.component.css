@@ -10,10 +10,27 @@
     border-style: solid;
     border-color: #F6A895; 
     border-radius: 25px;
+    box-shadow: 5px 10px 5px -5px #888888;
 
 }
 
 
 ul {
     list-style-type: none;
+}
+
+hr {
+    color: #F6A895;
+    margin: 0;
+    padding: 0;
+}
+
+.selected-div {
+    display: flex;
+    margin: 0;
+    padding: 1em;
+    background-color: lightgray;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 5px 10px 5px -5px #c5c5c5;
+
 }

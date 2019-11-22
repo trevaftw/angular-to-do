@@ -9,15 +9,23 @@
 <div class="container">
     <p>You need to do:</p>
     <ul *ngFor="let task of tasks">
-        <li><input type="checkbox" /> 
+        <li><input type="checkbox" />
             <ng-template [ngIf]="task.editing === false" [ngIfElse]="editingTask">
-                {{task.title}}. <button class="edit-item" (click)="editTask(task)" >Edit</button>
+                {{task.title}}. <button class="edit-item" (click)="editTask(task)">Edit</button>
             </ng-template>
             <ng-template #editingTask>
-                <input type="text" [(ngModel)]="task.title" /><button class="edit-item" (click)="editTask(task)">Save</button>
+                <input type="text" [(ngModel)]="task.title" /><button class="edit-item"
+                    (click)="editTask(task)">Save</button>
             </ng-template>
-            <button class="remove-item" (click)="deleteTask(task.id)">Delete</button> </li><br />
+            <button class="remove-item" (click)="deleteTask(task.id)">Delete</button>
+        </li><br />
     </ul>
+    <hr noshade="noshade">
+    <div class="selected-div">
+        <button>Select All</button>
+        <button>Complete Selected</button>
+        <button>Delete Selected</button>
+    </div>
 </div>
 
 <click-game></click-game>
