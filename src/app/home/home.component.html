@@ -9,12 +9,12 @@
 <div class="container">
     <p>You need to do:</p>
     <ul *ngFor="let task of tasks">
-        <li><input type="checkbox" /> {{task.title}}.
+        <li><input type="checkbox" /> 
             <ng-template [ngIf]="task.editing === false" [ngIfElse]="save">
-                <button class="edit-item" (click)="editTask(task)" >Edit</button>
+                {{task.title}}. <button class="edit-item" (click)="editTask(task)" >Edit</button>
             </ng-template>
             <ng-template #save>
-                <button class="edit-item">Save</button>
+                <input type="text" [(ngModel)]="task.title" /><button class="edit-item" (click)="editTask(task)">Save</button>
             </ng-template>
             <button class="remove-item" (click)="deleteTask(task.id)">Delete</button> </li><br />
     </ul>

@@ -80,8 +80,9 @@ export class HomeComponent implements OnInit {
     this.taskID++;
   }
 
-  editTask(task: object): void {
+  editTask(task: Task): void {
     console.log(task)
+    task.editing = !task.editing
   }
 
   deleteTask(id: number): void {
