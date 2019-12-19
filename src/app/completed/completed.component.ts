@@ -11,7 +11,14 @@ export class CompletedComponent implements OnInit {
 
   constructor(private _http: HttpService) { }
 
-  randomMagicCard: object;
+  randomMagicCard: Object = {
+    power: '',
+    toughness: '',
+    name: '',
+    cmc: '',
+    type_line: '',
+    oracle_text: '',
+  };
 
   ngOnInit() {
     this._http.getRandomMagicCard().subscribe(response => {
