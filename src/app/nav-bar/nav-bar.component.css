@@ -36,6 +36,9 @@ li a{
 
 }
 
+.nav-link {
+}
+
 .nav-link:hover {
     filter: brightness(85%);
 }
