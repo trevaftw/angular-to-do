@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 //Route Components
 import { HomeComponent } from './home/home.component'
-import { CompletedComponent } from './completed/completed.component'
+// import { CompletedComponent } from './completed/completed.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'done', component: CompletedComponent }
+  // { path: 'done', component: CompletedComponent }
 ];
 
 @NgModule({

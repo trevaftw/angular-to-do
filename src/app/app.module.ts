@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http'
 //Components
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { CompletedComponent } from './completed/completed.component';
+// import { CompletedComponent } from './completed/completed.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { ClickGameComponent } from './click-game/click-game.component';
@@ -18,7 +18,7 @@ import { ClickGameComponent } from './click-game/click-game.component';
   declarations: [
     AppComponent,
     NavBarComponent,
-    CompletedComponent,
+    // CompletedComponent,
     HomeComponent,
     FooterComponent,
     ClickGameComponent
